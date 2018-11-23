@@ -1,0 +1,45 @@
+strace -p1234 -s9999 -e write
+pgrep python
+tail -f /proc/<pid>/fd/1
+top
+ps
+<<<<<<< HEAD
+
+
+PiGatewaySerial
+
+
+sudo /etc/ppp/peers/rnet
+sudo pon rnet
+sudo poff rnet
+
+sudo nano /etc/sysctl.conf
+net.ipv4.ip_forward=1
+sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
+iptables-restore < /etc/iptables.ipv4.nat
+
+
+-A FORWARD -i eth0 -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A FORWARD -i wlan0 -o eth0 -j ACCEPT
+
+cat /var/log/syslog | grep pppd
+
+sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT
+
+=======
+>>>>>>> bc2d846a7b8fabd86d86812c4c32d7904b8889e8
+
+
+
+iptables -A INPUT -p tcp -m tcp --dport 10000 -j ACCEPT
+# service iptables save
+# /etc/init.d/iptables restart
+
+firewall-cmd --add-port=10000/tcp
+# firewall-cmd --reload
+
+proftp: ftp
+
+
+get sim number : *733*2# : AT+CNUM
